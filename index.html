@@ -31,6 +31,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#toolbox">Toolbox</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -40,23 +41,22 @@
   <main id="main">
     <!-- Hero -->
     <section class="hero container" id="top">
-      <p class="eyebrow">
-        <span class="status-dot" aria-hidden="true"></span>
-        Computer Science · KIT · Karlsruhe, Germany
-      </p>
-      <h1 class="hero__title">
-        Hi, I’m Hyunsik.<br>
-        <span class="muted">I like new and challenging problems.</span>
-      </h1>
-      <p class="hero__lede">
-        I’m a 3rd-semester Computer Science student at the Karlsruhe Institute of Technology.
-        I build things to learn how they work, from a ray tracer written in plain Java
-        to an interactive map for a game.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="#projects">See my work</a>
-        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      <div class="hero__text">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          Karlsruhe, Germany
+        </p>
+        <h1 class="hero__title">Hyunsik Kim</h1>
+        <p class="hero__lede">
+          Computer Science student at the Karlsruhe Institute of Technology.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">See my work</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
       </div>
+      <img class="hero__photo" src="images/portrait.jpg" width="800" height="800"
+           alt="Portrait of Hyunsik Kim">
     </section>
 
     <!-- About -->
@@ -106,16 +106,18 @@
       <div class="projects">
         <!-- Raytracer -->
         <article class="card">
-          <div class="card__art card__art--raytracer" aria-hidden="true">
-            <span class="sphere sphere--a"></span>
-            <span class="sphere sphere--b"></span>
-            <span class="sphere sphere--c"></span>
+          <div class="card__art">
+            <img src="images/raytracer.jpg" width="1200" height="675" loading="lazy"
+                 alt="Rendered scene of many small matte, metal and glass spheres around three large spheres">
           </div>
           <div class="card__body">
             <h3 class="card__title">Ray Tracer in Java</h3>
             <p class="card__desc">
               A photorealistic 3D renderer with a bounding volume hierarchy (BVH)
               to speed up ray intersections, built using only the Java standard library.
+            </p>
+            <p class="card__note">
+              Scene layout from <cite>Ray Tracing in One Weekend</cite>.
             </p>
             <ul class="tags" aria-label="Technologies">
               <li>Java</li>
@@ -193,18 +195,18 @@
           <h3>Languages</h3>
           <ul class="tags tags--lg">
             <li>Java</li>
+            <li>Python</li>
+            <li>C#</li>
+          </ul>
+        </div>
+        <div class="toolbox__group">
+          <h3>Web &amp; tools</h3>
+          <ul class="tags tags--lg">
             <li>TypeScript</li>
             <li>JavaScript</li>
             <li>HTML</li>
             <li>CSS</li>
-          </ul>
-        </div>
-        <div class="toolbox__group">
-          <h3>Tools &amp; libraries</h3>
-          <ul class="tags tags--lg">
             <li>Git</li>
-            <li>Vite</li>
-            <li>Leaflet</li>
           </ul>
         </div>
         <div class="toolbox__group">
@@ -216,6 +218,24 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section class="section container" id="hobbies" aria-labelledby="hobbies-title">
+      <div class="section__head">
+        <p class="section__kicker">Hobbies</p>
+        <h2 class="section__title" id="hobbies-title">Away from the keyboard.</h2>
+        <p class="section__sub">Mostly, anyway.</p>
+      </div>
+
+      <ul class="hobbies">
+        <li>Video games</li>
+        <li>Swimming</li>
+        <li>Volleyball</li>
+        <li>Piano</li>
+        <li>Reading</li>
+        <li>Tinkering with software</li>
+      </ul>
     </section>
 
     <!-- Contact -->

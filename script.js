@@ -14,7 +14,7 @@
   if (!("IntersectionObserver" in window)) return;
 
   // Fade sections in as they enter the viewport
-  const revealTargets = document.querySelectorAll(".section__head, .about, .card, .toolbox__group, .contact");
+  const revealTargets = document.querySelectorAll(".section__head, .about, .card, .toolbox__group, .hobbies li, .contact");
   revealTargets.forEach((el) => el.classList.add("reveal"));
   const revealer = new IntersectionObserver(
     (entries) => {

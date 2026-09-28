@@ -17,8 +17,6 @@
   --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.05), 0 16px 40px rgba(0, 0, 0, 0.10);
 
   /* project art */
-  --art-rt-bg-1: #e8eefc;
-  --art-rt-bg-2: #f6f7fb;
   --art-atlas-bg: #eef5ef;
   --art-atlas-line: #9cc5a6;
   --art-atlas-pin: #0066cc;
@@ -48,8 +46,6 @@
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.5);
 
-    --art-rt-bg-1: #121a2e;
-    --art-rt-bg-2: #0e0f14;
     --art-atlas-bg: #0f1a13;
     --art-atlas-line: #2f5a3b;
     --art-atlas-pin: #2997ff;
@@ -202,8 +198,22 @@ cite {
    ========================================================================== */
 
 .hero {
-  padding-top: clamp(72px, 14vw, 160px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  padding-top: clamp(72px, 12vw, 144px);
   padding-bottom: clamp(64px, 10vw, 120px);
+}
+
+.hero__photo {
+  width: clamp(200px, 26vw, 320px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ffffff;
+  box-shadow: 0 0 0 1px var(--border), var(--shadow-hover);
 }
 
 .eyebrow {
@@ -225,19 +235,14 @@ cite {
 }
 
 .hero__title {
-  font-size: clamp(44px, 8vw, 88px);
+  font-size: clamp(48px, 9vw, 96px);
   font-weight: 800;
   letter-spacing: -0.045em;
-  line-height: 1.02;
-  max-width: 14ch;
-}
-
-.hero__title .muted {
-  font-weight: 700;
+  line-height: 1;
 }
 
 .hero__lede {
-  margin-top: 28px;
+  margin-top: 24px;
   max-width: 34em;
   font-size: clamp(18px, 2.2vw, 21px);
   color: var(--text-muted);
@@ -313,6 +318,12 @@ cite {
 .section__title {
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 700;
+}
+
+.section__sub {
+  margin-top: 12px;
+  font-size: clamp(18px, 2vw, 20px);
+  color: var(--text-muted);
 }
 
 /* About ------------------------------------------------------------------ */
@@ -397,6 +408,14 @@ cite {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: var(--bg-elev);
+}
+
+.card__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card__body {
@@ -419,47 +438,16 @@ cite {
   line-height: 1.55;
 }
 
+.card__note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+
 .card__links {
   margin-top: auto;
   padding-top: 4px;
   font-size: 14px;
-}
-
-/* ray tracer art: shaded spheres on a soft floor */
-.card__art--raytracer {
-  background:
-    radial-gradient(120% 60% at 50% 110%, rgba(0, 0, 0, 0.08), transparent 60%),
-    linear-gradient(180deg, var(--art-rt-bg-1), var(--art-rt-bg-2));
-}
-
-.sphere {
-  position: absolute;
-  border-radius: 50%;
-  box-shadow: 0 18px 24px -12px rgba(0, 0, 0, 0.35);
-}
-
-.sphere--a {
-  width: 34%;
-  aspect-ratio: 1;
-  left: 16%;
-  bottom: 14%;
-  background: radial-gradient(circle at 32% 28%, #ffffff 0 6%, #ff8a7a 16%, #d63b2f 55%, #5e140e 100%);
-}
-
-.sphere--b {
-  width: 24%;
-  aspect-ratio: 1;
-  left: 52%;
-  bottom: 18%;
-  background: radial-gradient(circle at 32% 28%, #ffffff 0 5%, #d8dde6 14%, #8a93a3 50%, #2c313a 100%);
-}
-
-.sphere--c {
-  width: 14%;
-  aspect-ratio: 1;
-  left: 74%;
-  bottom: 22%;
-  background: radial-gradient(circle at 32% 28%, #ffffff 0 6%, #7fb4ff 18%, #1f66d1 58%, #0b2352 100%);
 }
 
 /* atlas art: contour lines and map pins */
@@ -558,6 +546,26 @@ cite {
 .toolbox__group .tags li {
   background: var(--surface);
   border: 1px solid var(--border);
+}
+
+/* Hobbies ---------------------------------------------------------------- */
+
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hobbies li {
+  padding: 24px 28px;
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 /* Contact ---------------------------------------------------------------- */
@@ -684,6 +692,10 @@ cite {
   .toolbox {
     grid-template-columns: 1fr;
   }
+
+  .hobbies {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
@@ -691,16 +703,33 @@ cite {
     --gutter: 16px;
   }
 
+  .nav__brand {
+    display: none;
+  }
+
+  .nav__inner {
+    justify-content: center;
+  }
+
   .nav__links {
-    gap: 16px;
+    gap: 14px;
   }
 
   .nav__links a {
     font-size: 13px;
   }
 
-  .nav__brand {
-    font-size: 15px;
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__photo {
+    grid-row: 1;
+    width: 128px;
+  }
+
+  .hobbies li {
+    padding: 18px 20px;
   }
 
   .projects {
@@ -722,12 +751,3 @@ cite {
   }
 }
 
-@media (max-width: 420px) {
-  .nav__brand {
-    display: none;
-  }
-
-  .nav__inner {
-    justify-content: center;
-  }
-}
