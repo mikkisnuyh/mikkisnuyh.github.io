@@ -11,6 +11,28 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  // Light/dark toggle: follows the system until the visitor picks a theme
+  const root = document.documentElement;
+  const toggle = document.querySelector(".theme-toggle");
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const isDark = () => (root.dataset.theme ? root.dataset.theme === "dark" : systemDark.matches);
+  const syncToggle = () => {
+    toggle.setAttribute("aria-label", isDark() ? "Switch to light mode" : "Switch to dark mode");
+    document.querySelectorAll('meta[name="theme-color"]').forEach((m) => {
+      m.content = isDark() ? "#0a0a0b" : "#ffffff";
+    });
+  };
+  toggle.addEventListener("click", () => {
+    const theme = isDark() ? "light" : "dark";
+    root.dataset.theme = theme;
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+    syncToggle();
+  });
+  systemDark.addEventListener("change", syncToggle);
+  syncToggle();
+
   if (!("IntersectionObserver" in window)) return;
 
   // Fade sections in as they enter the viewport
