@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hyunsik Kim</title>
+  <meta name="description" content="Hyunsik Kim is an Informatik (Computer Science) student at the Karlsruhe Institute of Technology (KIT) who likes working on new and challenging problems.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hyunsik Kim">
+  <meta property="og:description" content="Informatik (Computer Science) student at KIT. Projects, background and contact.">
+  <meta property="og:url" content="https://mikkisnuyh.github.io/">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav__inner container">
+      <a class="nav__brand" href="#top" aria-label="Hyunsik Kim, back to top">Hyunsik Kim</a>
+      <nav aria-label="Primary">
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#toolbox">Toolbox</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero container" id="top">
+      <div class="hero__text">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          Karlsruhe, Germany
+        </p>
+        <h1 class="hero__title">Hyunsik Kim</h1>
+        <p class="hero__lede">
+          Informatik (Computer Science) student at the Karlsruhe Institute of Technology.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#projects">See my work</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <img class="hero__photo" src="images/portrait.jpg" width="800" height="800"
+           alt="Portrait of Hyunsik Kim">
+    </section>
+
+    <!-- About -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section__head">
+        <p class="section__kicker">About</p>
+        <h2 class="section__title" id="about-title">A bit about me.</h2>
+      </div>
+
+      <div class="about">
+        <div class="about__text">
+          <p>
+            I study Informatik (Computer Science) at KIT and I’m currently in my 3rd semester.
+            What I enjoy most is picking up a problem I don’t yet know how to solve
+            and working through it until I do, whether that means reading up on
+            bounding volume hierarchies or indexing Korean text for search.
+          </p>
+          <p>
+            Outside of lectures I work on side projects. This site collects them.
+          </p>
+        </div>
+
+        <dl class="facts">
+          <div class="facts__row">
+            <dt>Studying</dt>
+            <dd>B.Sc. Informatik <span class="muted">(Computer Science)</span><br><span class="muted">Karlsruhe Institute of Technology</span></dd>
+          </div>
+          <div class="facts__row">
+            <dt>Currently</dt>
+            <dd>3rd semester</dd>
+          </div>
+          <div class="facts__row">
+            <dt>Based in</dt>
+            <dd>Karlsruhe, Germany</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section__head">
+        <p class="section__kicker">Projects</p>
+        <h2 class="section__title" id="projects-title">Things I’ve built.</h2>
+      </div>
+
+      <div class="projects">
+        <!-- Raytracer -->
+        <article class="card">
+          <div class="card__art">
+            <img src="images/raytracer.jpg" width="1200" height="675" loading="lazy"
+                 alt="Rendered scene of many small matte, metal and glass spheres around three large spheres">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Ray Tracer in Java</h3>
+            <p class="card__desc">
+              A photorealistic 3D renderer with a bounding volume hierarchy (BVH)
+              to speed up ray intersections, built using only the Java standard library.
+            </p>
+            <p class="card__note">
+              Scene layout from <cite>Ray Tracing in One Weekend</cite>.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Java</li>
+              <li>BVH</li>
+              <li>3D rendering</li>
+            </ul>
+            <p class="card__links">
+              <span class="muted">Links coming soon</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- TotK Atlas -->
+        <article class="card">
+          <div class="card__art">
+            <img src="images/totk-atlas.jpg" width="1200" height="675" loading="lazy"
+                 alt="Map of Hyrule from Tears of the Kingdom as shown in TotK Atlas">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">TotK Atlas</h3>
+            <p class="card__desc">
+              A Korean-language interactive map and guide for <cite>The Legend of Zelda:
+              Tears of the Kingdom</cite>. It covers the Surface, Sky and Depths layers,
+              shows where items, collectibles and locations are, and has category
+              filters and search with Korean initial-consonant (초성) matching.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>TypeScript</li>
+              <li>Leaflet</li>
+              <li>Vite</li>
+              <li>HTML/CSS</li>
+            </ul>
+            <p class="card__links">
+              <span class="muted">Personal project, not publicly hosted</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- Coming soon -->
+        <article class="card card--placeholder">
+          <div class="card__art card__art--soon" aria-hidden="true">
+            <span class="plus">+</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Next project</h3>
+            <p class="card__desc">In progress. More soon.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Toolbox -->
+    <section class="section container" id="toolbox" aria-labelledby="toolbox-title">
+      <div class="section__head">
+        <p class="section__kicker">Toolbox</p>
+        <h2 class="section__title" id="toolbox-title">What I work with.</h2>
+      </div>
+
+      <div class="toolbox">
+        <div class="toolbox__group">
+          <h3>Languages</h3>
+          <ul class="tags tags--lg">
+            <li>Java</li>
+            <li>Python</li>
+            <li>C#</li>
+          </ul>
+        </div>
+        <div class="toolbox__group">
+          <h3>Web &amp; tools</h3>
+          <ul class="tags tags--lg">
+            <li>TypeScript</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Git</li>
+          </ul>
+        </div>
+        <div class="toolbox__group">
+          <h3>Interests</h3>
+          <ul class="tags tags--lg">
+            <li>Computer graphics</li>
+            <li>Data structures</li>
+            <li>Interactive web apps</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section class="section container" id="hobbies" aria-labelledby="hobbies-title">
+      <div class="section__head">
+        <p class="section__kicker">Hobbies</p>
+        <h2 class="section__title" id="hobbies-title">Away from the keyboard.</h2>
+        <p class="section__sub">Mostly, anyway.</p>
+      </div>
+
+      <ul class="hobbies">
+        <li>Video games</li>
+        <li>Swimming</li>
+        <li>Volleyball</li>
+        <li>Piano</li>
+        <li>Reading</li>
+        <li>Tinkering with software</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <div class="contact">
+        <p class="section__kicker">Contact</p>
+        <h2 class="contact__title" id="contact-title">Let’s talk.</h2>
+        <p class="contact__lede">
+          Want to talk about a project, a problem or anything else? Email me.
+        </p>
+
+        <ul class="contact__list">
+          <li>
+            <a class="contact__item" href="mailto:hyunsik.kim@proton.me">
+              <span class="contact__label">Email</span>
+              <span class="contact__value">hyunsik.kim@proton.me</span>
+              <span class="contact__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact__item" href="mailto:hyunsik.kim@student.kit.edu">
+              <span class="contact__label">Student email</span>
+              <span class="contact__value">hyunsik.kim@student.kit.edu</span>
+              <span class="contact__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact__item" href="https://github.com/mikkisnuyh" rel="me">
+              <span class="contact__label">GitHub</span>
+              <span class="contact__value">@mikkisnuyh</span>
+              <span class="contact__arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Hyunsik Kim</p>
+      <p class="muted">Karlsruhe, Germany</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
