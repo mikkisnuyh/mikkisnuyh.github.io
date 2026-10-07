@@ -1,6 +1,4 @@
 (() => {
-  document.documentElement.classList.add("js");
-
   // Footer year
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
@@ -11,27 +9,35 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Light/dark toggle: follows the system until the visitor picks a theme
+  // Light/dark toggle: follows the system until the visitor picks a theme.
+  // Picking the theme the system already uses goes back to following it.
   const root = document.documentElement;
   const toggle = document.querySelector(".theme-toggle");
   const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
   const isDark = () => (root.dataset.theme ? root.dataset.theme === "dark" : systemDark.matches);
-  const syncToggle = () => {
+  const barColor = (dark) => (dark ? "#0a0a0b" : "#ffffff");
+  const syncTheme = () => {
     toggle.setAttribute("aria-label", isDark() ? "Switch to light mode" : "Switch to dark mode");
+    // With no picked theme, each meta keeps the color for its own media query
     document.querySelectorAll('meta[name="theme-color"]').forEach((m) => {
-      m.content = isDark() ? "#0a0a0b" : "#ffffff";
+      m.content = barColor(root.dataset.theme ? isDark() : m.media.includes("dark"));
     });
   };
-  toggle.addEventListener("click", () => {
-    const theme = isDark() ? "light" : "dark";
-    root.dataset.theme = theme;
-    try {
-      localStorage.setItem("theme", theme);
-    } catch (e) {}
-    syncToggle();
-  });
-  systemDark.addEventListener("change", syncToggle);
-  syncToggle();
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const dark = !isDark();
+      const theme = dark === systemDark.matches ? null : dark ? "dark" : "light";
+      if (theme) root.dataset.theme = theme;
+      else delete root.dataset.theme;
+      try {
+        if (theme) localStorage.setItem("theme", theme);
+        else localStorage.removeItem("theme");
+      } catch (e) {}
+      syncTheme();
+    });
+    systemDark.addEventListener("change", syncTheme);
+    syncTheme();
+  }
 
   if (!("IntersectionObserver" in window)) return;
 

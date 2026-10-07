@@ -20,7 +20,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Apply a saved theme before first paint to avoid a flash of the wrong one
+    // Mark JS as available and apply a saved theme before first paint,
+    // so the theme toggle and colors don't shift once script.js runs
+    document.documentElement.classList.add("js");
     try {
       const theme = localStorage.getItem("theme");
       if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;

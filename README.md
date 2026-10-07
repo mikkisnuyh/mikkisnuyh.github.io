@@ -7,8 +7,8 @@ Plain HTML, CSS and JavaScript with no build step. Push to `main` and GitHub Pag
 | File | Purpose |
 | --- | --- |
 | `index.html` | All page content (about, projects, toolbox, contact) |
-| `styles.css` | Styles; light/dark colors are the tokens at the top |
-| `script.js` | Scroll effects, active nav link, footer year |
+| `styles.css` | Styles; light/dark colors are the `light-dark()` tokens at the top |
+| `script.js` | Scroll effects, active nav link, footer year, light/dark toggle (saved in `localStorage`; an inline script in `index.html`'s `<head>` applies it before first paint) |
 | `favicon.svg` | Tab icon |
 
 To preview locally: `python3 -m http.server` and open <http://localhost:8000>.
