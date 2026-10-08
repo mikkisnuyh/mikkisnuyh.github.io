@@ -472,12 +472,6 @@ html:not(.js) .theme-toggle {
   line-height: 1.55;
 }
 
-.card__note {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: -4px;
-}
-
 .card__links {
   margin-top: auto;
   padding-top: 4px;

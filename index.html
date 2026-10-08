@@ -124,28 +124,29 @@
       </div>
 
       <div class="projects">
-        <!-- Raytracer -->
+        <!-- SynthID Check -->
         <article class="card">
           <div class="card__art">
-            <img src="images/raytracer.jpg" width="1200" height="675" loading="lazy"
-                 alt="Rendered scene of many small matte, metal and glass spheres around three large spheres">
+            <img src="images/synthid-check.jpg" width="1200" height="675" loading="lazy"
+                 alt="A magnifying glass over a sunset landscape reveals a hidden pattern of sparkles, next to a drop zone reading “Drop here to check with SynthID”">
           </div>
           <div class="card__body">
-            <h3 class="card__title">Ray Tracer in Java</h3>
+            <h3 class="card__title">SynthID Check</h3>
             <p class="card__desc">
-              A photorealistic 3D renderer with a bounding volume hierarchy (BVH)
-              to speed up ray intersections, built using only the Java standard library.
-            </p>
-            <p class="card__note">
-              Scene layout from <cite>Ray Tracing in One Weekend</cite>.
+              A Firefox extension that checks images, video and audio for SynthID, the
+              invisible watermark that Google’s AI tools and partners such as OpenAI embed.
+              Drag, right-click or pick media on any page and the original file opens in
+              Google’s SynthID Detector. Unit-tested, with CI and tagged releases on
+              GitHub Actions.
             </p>
             <ul class="tags" aria-label="Technologies">
-              <li>Java</li>
-              <li>BVH</li>
-              <li>3D rendering</li>
+              <li>JavaScript</li>
+              <li>WebExtensions</li>
+              <li>Firefox</li>
+              <li>GitHub Actions</li>
             </ul>
             <p class="card__links">
-              <span class="muted">Links coming soon</span>
+              <a href="https://github.com/mikkisnuyh/synthid-firefox-extension">Source on GitHub ↗</a>
             </p>
           </div>
         </article>
@@ -172,6 +173,56 @@
             </ul>
             <p class="card__links">
               <span class="muted">Personal project, not publicly hosted</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- Raytracer -->
+        <article class="card">
+          <div class="card__art">
+            <img src="images/raytracer.jpg" width="1200" height="675" loading="lazy"
+                 alt="Rendered scene of many small matte, metal and glass spheres around three large spheres">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Ray Tracer in Java</h3>
+            <p class="card__desc">
+              A port of the ray tracer from <cite>Ray Tracing in One Weekend</cite> to Java,
+              using only the Java standard library, with a bounding volume hierarchy (BVH)
+              to speed up ray intersections.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Java</li>
+              <li>BVH</li>
+              <li>3D rendering</li>
+            </ul>
+            <p class="card__links">
+              <span class="muted">Links coming soon</span>
+            </p>
+          </div>
+        </article>
+
+        <!-- Caelestia theme for Spotifast -->
+        <article class="card">
+          <div class="card__art">
+            <img src="images/spotifast-caelestia.jpg" width="1200" height="675" loading="lazy"
+                 alt="A music player split diagonally between a dark Catppuccin Mocha theme and a light Catppuccin Latte theme, each over a matching wallpaper">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Caelestia Theme for Spotifast</h3>
+            <p class="card__desc">
+              Makes the Spotifast music player follow the Caelestia desktop’s color scheme.
+              Whenever the wallpaper, scheme or light/dark mode changes, a Python script maps
+              Caelestia’s Material You colors to a Spotifast palette and the player recolors
+              without interrupting playback. Runs as a Caelestia hook or a systemd path unit.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li>
+              <li>Shell</li>
+              <li>systemd</li>
+              <li>Linux</li>
+            </ul>
+            <p class="card__links">
+              <a href="https://github.com/mikkisnuyh/spotifast-caelestia-theme">Source on GitHub ↗</a>
             </p>
           </div>
         </article>
