@@ -124,6 +124,40 @@
       </div>
 
       <div class="projects">
+        <!-- Homeserver -->
+        <article class="card">
+          <div class="card__art card__art--glyph" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="12" width="44" height="16" rx="3"/>
+              <rect x="10" y="36" width="44" height="16" rx="3"/>
+              <path d="M18 20h0M18 44h0" stroke-width="4"/>
+              <path d="M28 20h18M28 44h18"/>
+            </svg>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Homeserver</h3>
+            <p class="card__desc">
+              A headless Debian server on a used mini PC that runs a personal AI assistant,
+              remote coding agents and self-hosted services. Each workload runs under its own
+              unprivileged user, the AI agent works in a rootless Docker sandbox, and all access
+              goes through Tailscale with no open ports. Nightly restic backups, Uptime Kuma
+              monitoring, a weekly model-sync script and monthly maintenance run unattended
+              and report to Discord.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Debian</li>
+              <li>Docker</li>
+              <li>Tailscale</li>
+              <li>systemd</li>
+              <li>Python</li>
+            </ul>
+            <p class="card__links">
+              <span class="muted">Private setup, not publicly hosted</span>
+            </p>
+          </div>
+        </article>
+
         <!-- SynthID Check -->
         <article class="card">
           <div class="card__art">

@@ -496,6 +496,18 @@ html:not(.js) .theme-toggle {
   background: var(--bg-elev);
 }
 
+/* Icon art for projects without a screenshot */
+.card__art--glyph {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+.card__art--glyph svg {
+  width: 96px;
+  height: 96px;
+}
+
 .plus {
   font-size: 48px;
   font-weight: 300;
