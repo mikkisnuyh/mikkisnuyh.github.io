@@ -124,6 +124,35 @@
       </div>
 
       <div class="projects">
+        <!-- Homeserver -->
+        <article class="card">
+          <div class="card__art">
+            <img src="images/homeserver.jpg" width="1200" height="675" loading="lazy"
+                 alt="An HP ProDesk 600 G4 Mini, a small black-and-silver office PC, on a white background">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Homeserver</h3>
+            <p class="card__desc">
+              A headless Debian server on a used mini PC that runs a personal AI assistant,
+              remote coding agents and self-hosted services. Each workload runs under its own
+              unprivileged user, the AI agent works in a rootless Docker sandbox, and all access
+              goes through Tailscale with no open ports. Nightly restic backups, Uptime Kuma
+              monitoring, a weekly model-sync script and monthly maintenance run unattended
+              and report to Discord.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Debian</li>
+              <li>Docker</li>
+              <li>Tailscale</li>
+              <li>systemd</li>
+              <li>Python</li>
+            </ul>
+            <p class="card__links">
+              <span class="muted">Private setup, not publicly hosted</span>
+            </p>
+          </div>
+        </article>
+
         <!-- SynthID Check -->
         <article class="card">
           <div class="card__art">
